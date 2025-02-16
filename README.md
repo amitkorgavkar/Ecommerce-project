@@ -10,6 +10,49 @@ This is a simple E-commerce application built using **Spring Boot and Java**. Th
 - **Database:** MySQL
 - **Version Control:** Git & GitHub
 
+Database Setup & Connectivity
+The project uses **MySQL** as the database. Follow these steps to set it up and connect:
+
+### 1️⃣ Ensure MySQL is Installed & Running
+Make sure MySQL Server is installed and running on your system.
+
+### 2️⃣ Create the Database Using the Provided SQL File
+Run the following command in the terminal (Command Prompt, Git Bash, or MySQL Shell):
+
+```sh
+mysql -u root -p < amit_ecommerce_db.sql
+```
+This will:
+✔️ Create the database (`amit_ecommerce_db`)
+✔️ Import all necessary tables and data
+
+Alternatively, if you want to manually create the database before importing:
+
+```sql
+CREATE DATABASE amit_ecommerce_db;
+USE amit_ecommerce_db;
+SOURCE amit_ecommerce_db.sql;
+```
+
+### 3️⃣ Update Database Credentials in `application.properties`
+Modify the database configuration in your Spring Boot project:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/amit_ecommerce_db
+spring.datasource.username=root
+spring.datasource.password=MySQL@Amit3110
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
+### 4️⃣ Run the Project
+Once the database is set up, start the application(in CMD or Git Bash):
+
+```sh
+mvn spring-boot:run
+```
+
+Now, your project is successfully connected to MySQL and ready to go
+
 ## How to Run the Project
 
 1. Clone the repository:
